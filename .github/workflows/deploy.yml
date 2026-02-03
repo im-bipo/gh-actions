@@ -16,9 +16,9 @@ jobs:
       - name: Deploy via ssh
         uses: appleboy/ssh-actions@1.0.3
         with:
-          host: ${{SSH_HOST}}
-          username: ${{SSH_USER}}
-          key: ${{SSH_KEY}}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd /root/gh-actions
             git pull origin main 
